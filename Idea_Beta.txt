@@ -1,0 +1,30 @@
+Estuve pensando en como encarar el trabajo y pense en enumerar todo lo malo de C, y tratar de solucionarlo:
+- Es viejo, se ve viejo
+- Falta OOP
+- Los punteros son confusos
+- Redundancia
+- Falta inferencia de tipo
+- Poco poder de declaratividad en las variables
+- No existe el tipo Bool (en realidad usa 1 y 0)
+
+Entonces pense en soluciones como:
+- No mas punto y coma
+- Implementar un sistema simple OOP
+- Chau punteros
+- Funcion => para inferencia de tipo o declarar variable con el resultado de una funcion (onda en lugar de Int n = 5 pones n => 5, o n => if(i<3){return 3})
+
+Teniendo esto en mente y lo que dije antes de pensar mas como es una funcion, tendriamos algo parecido a esto:
+
+// fn es mas corto que function o func, es lo mas comodo que hay, aunque quizas podriamos no usar nada directamente
+// fn (tipo parametro) nombre tipoReturn {}
+fn (Int n) ejemplo Int {
+    a => 5 	// int a = 5;
+    b => 1, for(Int i = 0, i<n, i++) : b *= 2	// Primero hace int b = 1, y despues lo aplica al for. El uso de (:) para hacer una funcion en una linea, quizas no es muy demostrativo con el for.
+    return b
+} 
+
+fn () main Bool {
+    ejemplo(2)
+    return true
+}
+

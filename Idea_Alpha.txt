@@ -1,0 +1,84 @@
+// Comentario normal
+/* Comentario procesable por IA */
+
+// Funciones en una linea
+(parametros) f (tipoSalida): ;
+
+// Uso de Funciones
+// Opcion flecha (->)
+() main (err) {
+    (1, 2) -> sumar; // 3
+
+    Int inicial = (1,2) -> sumar;    
+    (Int ejemplo, 1) => for(Int i = 0, i<=inicial, i++): ejemplo *= 2; // ejemplo = 16 
+
+    return 1;
+}
+
+// Opcion punto (.)
+() main (err) {
+    Int a = 1;
+    (a, 2).sumar; // 3
+
+    Int inicial = (a,2).sumar;    
+    (Int ejemplo, a) => (Int i = 0, i<=inicial, i++).for: ejemplo *= 2; // ejemplo = 16
+
+    return 1;
+}
+
+// Funcion sumar
+(Int a, Int b) sumar (Int): a+b;
+
+// Funcion duplicar
+(Int a) duplicar (Int): a*2;
+
+// Funcion flecha declarativa (=>). Declara una variable con un valor inicial y realiza una funcion utilizando dicha variable
+(Int ejemplo, 1) => ; // ejemplo = 1
+(Int ejemplo, 1) => ejemplo+5; // ejemplo = 6
+
+// Sucesion de funciones (.. o ->->)
+(Int a = 1, Int b = 2) -> sumar -> duplicar; // 6
+(Int a = 1, Int b = 2).sumar.duplicar;       // 6
+
+// for (chau while)
+for(i<5): i++; // while(i<5){ i++ }
+(i<5).for: i++;
+
+// Concatenacion de parametros
+(5).(1) // (5, 1)
+(2).duplicar.(1).sumar // ((2).duplicar, 1).sumar = 5
+
+// Declaratividad
+(tipo parametro) f (tipoResultado) {}
+() f (tipoResultado) {}
+(tipo parametro) f {} // void
+
+// Objetos
+(constructores) Objeto {
+    c01: c01;
+    c02: c02;
+    (parametro) metodo (tipoReturn): funcionPerSe; 
+}
+
+(color, forma) Cosa {
+    color: color;
+    forma: forma;
+}
+
+Cosa cuboRojo => (color: rojo, forma: cubo)
+cuboRojo.color; // rojo
+cuboRojo.forma; // cubo
+
+cuboRojo.color: violeta;
+cuboRojo.color; // violeta 
+
+cuboRojo.saludo: hola;
+cuboRojo.saludo; // hola
+cuboRojo.hola; // err
+
+
+
+
+
+
+
